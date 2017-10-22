@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="updater_white">#ffffff</color>
+    <color name="updater_transparent">#00000000</color>
+    <color name="updater_line_color_light">#efefef</color><!-- 背景内部线条 -->
+    <color name="updater_line_color">#e1e1e1</color>	<!-- 布局下面线条 -->
+
+    <color name="updater_color_item_dark">#E64A19</color>
+    <color name="updater_color_item_normal">#FF5722</color>
+
+    <!--普通文本字体的颜色-->
+    <color name="updater_color_text_norml">#777777</color>
+    <color name="updater_color_text_cibanbenbuzaitishi">#999999</color>
+
+
+    <!--Toast相关配置-->
+    <color name="toast_text_color">#ffffff</color>
+</resources>

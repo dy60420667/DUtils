@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--AutoScrollViewPager-->
+    <dimen name="scroll_item_height">30dp</dimen>
+    <dimen name="auto_scrollview_dot_height">8dp</dimen>
+</resources>

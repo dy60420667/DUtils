@@ -1,0 +1,1 @@
+include ':LibBaseUtils', ':LibUpdater', ':LibGaode', ':TagFlowlayout', ':LibHttp', ':LibPhotopicker', ':appDemo'

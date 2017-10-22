@@ -1,0 +1,27 @@
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_neterror"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_neterror"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:src="@drawable/pic_load_fail"/>
+
+    <TextView
+        android:id="@+id/tv_neterror"
+        android:layout_marginTop="@dimen/failed_text_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/load_more_error"
+        android:textColor="@color/failed_text"
+        android:textSize="@dimen/failed_text"
+        android:layout_marginBottom="70dp"/>
+
+</LinearLayout>

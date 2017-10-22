@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">dybasetool</string>
+    <string name="empty_msg">暂无内容</string>
+    <string name="load_more">正在加载...</string>
+    <string name="load_more_error">加载失败，点击重试</string>
+    <string name="load_nomore">没有更多了~</string>
+    <string name="resoure_null">资源不存在</string>
+</resources>

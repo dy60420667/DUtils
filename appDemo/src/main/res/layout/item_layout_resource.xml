@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_renwujilu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/pressbg_list_item"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/iconfont_photo" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/logo"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="40dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="任务任务记录任务记录任务记录任务记录任务记录任务记录记录"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/text" />
+
+    <TextView
+        android:id="@+id/text_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/logo"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="40dp"
+        android:ellipsize="end"
+        android:lines="3"
+        android:text="任务任务记录录任务记录任务记录录任务记录任务记录录任务记录任务记录任务记录任务记录任务记录任务记录任务记录记录"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/text_descript" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/tool_arrow_right" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="15dp"
+        android:background="@color/line_color" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_version_space"
+        android:layout_below="@id/line"
+        android:background="@color/activity_bg" />
+</RelativeLayout>

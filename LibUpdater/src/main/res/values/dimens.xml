@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="updater_width">284dp</dimen>
+    <dimen name="updater_height">366dp</dimen>
+    <dimen name="updater_height_2">348dp</dimen>
+    <dimen name="updater_line_height">0.8dp</dimen>
+
+
+    <dimen name="toast_max_width">300dp</dimen>
+    <dimen name="dialog_wight">300dp</dimen>
+    <dimen name="toast_text_size">14sp</dimen><!--Toast 的宽度-->
+</resources>

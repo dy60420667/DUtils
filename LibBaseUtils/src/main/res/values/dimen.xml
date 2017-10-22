@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text">17sp</dimen>
+    <dimen name="text_title">20sp</dimen>
+    <dimen name="text_descript">14sp</dimen>
+
+
+    <dimen name="text_loading">30sp</dimen>
+
+    <!--首页底部状态栏字体大小-->
+    <dimen name="radio_text_size">13sp</dimen>
+
+    <dimen name="line_height">0.5dp</dimen>
+    <dimen name="line_height_blod">1dp</dimen>
+
+
+    <dimen name="list_item_version_space">8dp</dimen>
+
+    <!-- 通用异常页面提示语 -->
+    <dimen name="failed_text">16dp</dimen>
+    <dimen name="failed_text_top">20dp</dimen>
+    <dimen name="toolbar_img_paddingRight">17dp</dimen>
+    <dimen name="toolbar_img_paddingLeft">10dp</dimen>
+
+    <dimen name="tool_actionbar_item_height">45dp</dimen>
+
+
+
+
+    <dimen name="tool_circle_radios">3dp</dimen><!-- 按钮及会话框 -->
+    <dimen name="tool_circle_tag">1.5dp</dimen><!-- 按钮及会话框 -->
+
+    <dimen name="toast_max_width">300dp</dimen>
+    <dimen name="dialog_wight">300dp</dimen>
+    <dimen name="toast_text_size">14sp</dimen><!--Toast 的宽度-->
+</resources>

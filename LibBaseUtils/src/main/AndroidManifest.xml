@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.dy.baseutils">
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity android:name=".module.picturesshow.A_PictureListShow"   />
+        <activity android:name="com.dy.baseutils.view.webactivity.A_WebView"  />
+        <activity android:name=".module.newsshow.A_View_msg" />
+    </application>
+
+    <meta-data
+    android:name="com.dy.baseutils.utils.glide.MyGlideModule"
+    android:value="GlideModule" />
+
+</manifest>

@@ -1,0 +1,30 @@
+<resources>
+    <!--http://www.cnblogs.com/qianyukun/p/5830987.html-->
+
+    <style name="AppTheme" parent="AppTheme.Base">
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item><!--App bar 底色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item><!--状态栏底色-->
+        <item name="colorAccent">@color/colorAccent</item><!--各控制元件(如：check box、switch 或是 radoi) 被勾选 (checked) 或是选定 (selected) 的颜色。-->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:windowBackground">@color/activity_bg</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
+
+
+    <style name="Theme.ToolCustomDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/touming</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:tileMode">repeat</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+</resources>

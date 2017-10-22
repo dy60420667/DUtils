@@ -1,0 +1,36 @@
+<resources>
+    <string name="finish_app">再按一次退出程序</string>
+    <string name="updater_download_cancle">取消下载</string>
+    <string name="updater_download_error">下载出错,点击重试</string>
+    <string name="updater_download_httpiserror">资源不存在</string>
+    <string name="updater_download_restart">点击重试</string>
+
+    <!--升级说明-->
+    <string name="updater_version_name">【版本名称】</string>
+    <string name="updater_version_descripty">【版本说明】</string>
+    <string name="updater_version_btn_no">以后再说</string>
+    <string name="updater_version_btn_ok">现在更新</string>
+    <string name="updater_version_ignore">此版本不再提示</string>
+    <string name="updater_version_findnew">发现新版本</string>
+
+    <!--升级中-->
+    <string name="updater_loading">连接中...</string>
+    <string name="updater_pause">已暂停</string>
+    <string name="updater_downloading">新版本下载中</string>
+
+
+    <!--下载-->
+    <string name="updater_nosdcard">沒有检测到sdcard</string>
+
+
+    <string name="updater_version_check">新版本检查中...</string>
+    <string name="updater_no_update">当前已是最新版本</string>
+    <string name="updater_no_wifi">沒有wifi连接， 只在wifi下更新</string>
+    <string name="update_version">当前版本已过期，必须升级才能使用.</string>
+    <string name="net_fail">网络不给力</string>
+    <string name="servers_fail">服务器开小差了</string>
+
+
+    <string name="updater_net_error_tips">网络不给力，点击重试</string>
+    <string name="updater_server_error_tips">服务器开小差，点击重试</string>
+</resources>
