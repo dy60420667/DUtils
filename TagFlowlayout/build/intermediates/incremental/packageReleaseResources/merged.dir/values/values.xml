@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tagflowlayout_divider">#B6B6B6</color>
+    <color name="tagflowlayout_gray">#8e8e8e</color>
+    <declare-styleable name="TagFlowLayout"><attr format="boolean" name="auto_select_effect"/><attr format="integer" name="max_select"/><attr name="gravity">
+            <enum name="left" value="-1"/>
+            <enum name="center" value="0"/>
+            <enum name="right" value="1"/>
+        </attr></declare-styleable>
+    <dimen name="tagflowlayout_corner_radius">2dp</dimen>
+    <dimen name="tagflowlayout_horizontal_spacing">8.0dip</dimen>
+    <dimen name="tagflowlayout_vertical_spacing">6.0dip</dimen>
+    <string name="flow_layout_more_str"> 更多 </string>
+    <string name="tagflowlayout_gravity_center">center</string>
+    <string name="tagflowlayout_gravity_left">left</string>
+    <string name="tagflowlayout_gravity_right">right</string>
+</resources>

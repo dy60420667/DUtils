@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import dy.utils.libhttp.model.BaseResponse;
 import dy.utils.libhttp.model.movie.list.Movie_item;
-import dy.utils.libhttp.config.ILibHttpTlmp;
+import dy.utils.libhttp.config.LibHttpManager;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -46,7 +46,7 @@ public class LibHTTPClient {
         retrofit = new Retrofit.Builder().client(httpClientBuilder.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .baseUrl(ILibHttpTlmp.getInstance().getBaseUrl())
+                .baseUrl(LibHttpManager.getInstance().getBaseUrl())
                 .build();
         http_api = retrofit.create(HTTP_API.class);
     }
@@ -54,7 +54,7 @@ public class LibHTTPClient {
     //添加线程管理并订阅
     private void toSubscribe(Observable o, Subscriber s){
         o.subscribeOn(Schedulers.io())
-                .timeout(ILibHttpTlmp.getInstance().getTIME_OUT_(), TimeUnit.SECONDS)
+                .timeout(LibHttpManager.getInstance().getTIME_OUT_(), TimeUnit.SECONDS)
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(s);
@@ -63,7 +63,7 @@ public class LibHTTPClient {
 
     public void getMovieTops(Subscriber<BaseResponse<Movie_item>> subscriber, int start){
         HashMap<String,String> map = new HashMap<>();
-        map.put("count",ILibHttpTlmp.getInstance().getPAGE_SIZE()+"");
+        map.put("count", LibHttpManager.getInstance().getPAGE_SIZE()+"");
         map.put("start",start+"");
         Observable observable = http_api.getMovieTop(map);
         toSubscribe(observable,subscriber);
@@ -71,7 +71,7 @@ public class LibHTTPClient {
 
     public void getMovieInTheaters(Subscriber<BaseResponse<Movie_item>> subscriber, int start){
         HashMap<String,String> map = new HashMap<>();
-        map.put("count",ILibHttpTlmp.getInstance().getPAGE_SIZE()+"");
+        map.put("count", LibHttpManager.getInstance().getPAGE_SIZE()+"");
         map.put("start",start+"");
         Observable observable = http_api.getMovieInTheaters(map);
         toSubscribe(observable,subscriber);
@@ -79,7 +79,7 @@ public class LibHTTPClient {
 
     public void searchMovie(Subscriber<BaseResponse<Movie_item>> subscriber, String tag, int start){
         HashMap<String,String> map = new HashMap<>();
-        map.put("count",ILibHttpTlmp.getInstance().getPAGE_SIZE()+"");
+        map.put("count", LibHttpManager.getInstance().getPAGE_SIZE()+"");
         map.put("start",start+"");
         map.put("q",tag);
         Observable observable = http_api.getMovieSearch(map);

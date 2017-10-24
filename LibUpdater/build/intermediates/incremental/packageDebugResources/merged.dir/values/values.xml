@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="toast_text_color">#ffffff</color>
+    <color name="updater_color_item_dark">#E64A19</color>
+    <color name="updater_color_item_normal">#FF5722</color>
+    <color name="updater_color_text_cibanbenbuzaitishi">#999999</color>
+    <color name="updater_color_text_norml">#777777</color>
+    <color name="updater_line_color">#e1e1e1</color>
+    <color name="updater_line_color_light">#efefef</color>
+    <color name="updater_transparent">#00000000</color>
+    <color name="updater_white">#ffffff</color>
+    <dimen name="dialog_wight">300dp</dimen>
+    <dimen name="toast_max_width">300dp</dimen>
+    <dimen name="toast_text_size">14sp</dimen>
+    <dimen name="updater_height">366dp</dimen>
+    <dimen name="updater_height_2">348dp</dimen>
+    <dimen name="updater_line_height">0.8dp</dimen>
+    <dimen name="updater_width">284dp</dimen>
+    <string name="finish_app">再按一次退出程序</string>
+    <string name="net_fail">网络不给力</string>
+    <string name="servers_fail">服务器开小差了</string>
+    <string name="update_version">当前版本已过期，必须升级才能使用.</string>
+    <string name="updater_download_cancle">取消下载</string>
+    <string name="updater_download_error">下载出错,点击重试</string>
+    <string name="updater_download_httpiserror">资源不存在</string>
+    <string name="updater_download_restart">点击重试</string>
+    <string name="updater_downloading">新版本下载中</string>
+    <string name="updater_loading">连接中...</string>
+    <string name="updater_net_error_tips">网络不给力，点击重试</string>
+    <string name="updater_no_update">当前已是最新版本</string>
+    <string name="updater_no_wifi">沒有wifi连接， 只在wifi下更新</string>
+    <string name="updater_nosdcard">沒有检测到sdcard</string>
+    <string name="updater_pause">已暂停</string>
+    <string name="updater_server_error_tips">服务器开小差，点击重试</string>
+    <string name="updater_version_btn_no">以后再说</string>
+    <string name="updater_version_btn_ok">现在更新</string>
+    <string name="updater_version_check">新版本检查中...</string>
+    <string name="updater_version_descripty">【版本说明】</string>
+    <string name="updater_version_findnew">发现新版本</string>
+    <string name="updater_version_ignore">此版本不再提示</string>
+    <string name="updater_version_name">【版本名称】</string>
+    <style name="ProgressBar_Mini2" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">50dip</item>
+        <item name="android:minHeight">8dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/progressbar_horizontal</item>
+    </style>
+    <style name="Theme.CustomDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/updater_transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:tileMode">repeat</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+    <style name="custom_checkbox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/cb_updater</item>
+    </style>
+</resources>

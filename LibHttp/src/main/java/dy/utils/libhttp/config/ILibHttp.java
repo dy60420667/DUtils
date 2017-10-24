@@ -1,5 +1,7 @@
 package dy.utils.libhttp.config;
 
+import android.content.Context;
+
 /**
  * Auth : dy
  * Time : 2017/4/13 09:00
@@ -14,4 +16,8 @@ public interface ILibHttp {
     String getBaseUrl();
 
     LibHttpConfig buildHttpConfig();
+
+    void showToast(String text);
+
+    Context getContext();
 }

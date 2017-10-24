@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dy.hbjg"
+    android:versionCode="4"
+    android:versionName="1.0.3" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="25" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <meta-data
+        android:name="com.dy.baseutils.utils.glide.MyGlideModule"
+        android:value="GlideModule" />
+
+    <application
+        android:name="com.dy.hbjg.App"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.dy.hbjg.module.loading.A_Loading" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.dy.hbjg.A_Home" />
+        <activity android:name="com.dy.hbjg.module.me.login.A_Login" />
+        <activity android:name="com.dy.hbjg.module.me.register.A_Register" />
+        <activity android:name="com.dy.hbjg.module.search.A_search" />
+        <activity android:name="com.dy.baseutils.module.picturesshow.A_PictureListShow" />
+        <activity android:name="com.dy.baseutils.view.webactivity.A_WebView" />
+        <activity android:name="com.dy.baseutils.module.newsshow.A_View_msg" />
+        <activity
+            android:name="dy.utils.libphotopicker.views.PhotoPickerActivity"
+            android:theme="@style/AppTheme_p" />
+    </application>
+
+</manifest>

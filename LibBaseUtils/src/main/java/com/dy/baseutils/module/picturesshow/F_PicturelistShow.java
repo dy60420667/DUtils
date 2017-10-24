@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.dy.baseutils.R;
 import com.dy.baseutils.module.base.DYBaseFragment;
-import com.dy.baseutils.utils.ImageUtils;
+import com.dy.baseutils.utils.image.ImageUtils;
 
 import java.util.ArrayList;
 

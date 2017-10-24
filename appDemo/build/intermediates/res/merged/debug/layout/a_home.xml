@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/a__home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary">
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <RadioGroup
+        android:id="@+id/rg_tab"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/activity_bg"
+        android:checkedButton="@+id/button_1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp">
+
+        <RadioButton
+            android:id="@+id/button_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="2dp"
+            android:drawableTop="@drawable/tab_home"
+            android:gravity="center"
+            android:text="首页"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/color_radiobutton"
+            android:textSize="@dimen/radio_text_size" />
+
+        <RadioButton
+            android:id="@+id/button_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="2dp"
+            android:drawableTop="@drawable/tab_activitis"
+            android:gravity="center"
+            android:text="资料"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/color_radiobutton"
+            android:textSize="@dimen/radio_text_size" />
+
+
+        <RadioButton
+            android:id="@+id/button_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="2dp"
+            android:drawableTop="@drawable/tab_wode"
+            android:gravity="center"
+            android:text="我的"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/color_radiobutton"
+            android:textSize="@dimen/radio_text_size" />
+
+    </RadioGroup>
+
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@id/rg_tab"
+        android:background="@color/line_color"
+        android:visibility="visible" />
+
+
+    <com.dy.baseutils.view.viewpager.NoTouchViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line"
+        android:layout_below="@+id/toolbar"/>
+
+
+
+
+</RelativeLayout>

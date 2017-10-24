@@ -1,7 +1,8 @@
 package com.dy.hbjg;
 
+import com.dy.baseutils.utils.dialog.ToastUtils;
+
 import dy.utils.libhttp.config.ILibHttp;
-import dy.utils.libhttp.config.ILibHttpTlmp;
 import dy.utils.libhttp.config.LibHttpConfig;
 
 /**
@@ -24,5 +25,10 @@ public class IHTTPTlmp implements ILibHttp{
     @Override
     public LibHttpConfig buildHttpConfig() {
         return null;
+    }
+
+    @Override
+    public void showToast(String text) {
+        ToastUtils.ShowToast(App.getApp(),text);
     }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 普通状态 -->
+    <item>
+        <shape>
+            <solid android:color="@color/tool_green" />
+            <!-- 描边 -->
+            <stroke android:width="0.5dp" android:color="@color/tool_green" />
+            <corners android:radius="@dimen/tool_circle_tag" />
+            <padding android:bottom="@dimen/tool_circle_tag"
+                android:left="@dimen/tool_circle_radios"
+                android:right="@dimen/tool_circle_radios"
+                android:top="@dimen/tool_circle_tag"
+                />
+        </shape>
+    </item>
+</selector>

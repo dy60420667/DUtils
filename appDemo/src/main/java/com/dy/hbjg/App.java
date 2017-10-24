@@ -27,7 +27,7 @@ public class App extends Application {
         instance = this;
         readProperties();
 
-        LibHttpSdk.setiLibHttp(new IHTTPTlmp(base_server_url));
+        LibHttpSdk.initLibHttp(new IHTTPTlmp(base_server_url));
     }
 
     private String base_server_url;
