@@ -69,4 +69,24 @@
 
 
 
+    <color name="line_color_round">#e3e3e3</color>
+
+    <!-- 分割线 -->
+    <color name="line_color_dividing">#e3e3e3</color>
+
+    <!-- 辅助色 -->
+    <color name="dailoag_textcolor_title">#222222</color>
+
+    <!-- 辅助色 -->
+    <color name="dailoag_textcolor_title_third">#333333</color>
+
+
+    <color name="color_red_normal">#f24937</color>
+
+
+    <!--对话框颜色-->
+    <color name="dialog_btn_textcolor_ok">#007aff</color>
+    <color name="dialog_btn_textcolor_no">#007aff</color> <!--对话框颜色-->
+
+
 </resources>
