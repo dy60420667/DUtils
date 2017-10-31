@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.dy.baseutils.R;
 import com.dy.baseutils.utils.dialog.adapter.bean.BeanItemListView;
 
 import java.util.ArrayList;

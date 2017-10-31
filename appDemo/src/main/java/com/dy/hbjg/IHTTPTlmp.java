@@ -1,5 +1,7 @@
 package com.dy.hbjg;
 
+import android.content.Context;
+
 import com.dy.baseutils.utils.dialog.ToastUtils;
 
 import dy.utils.libhttp.config.ILibHttp;
@@ -30,5 +32,10 @@ public class IHTTPTlmp implements ILibHttp{
     @Override
     public void showToast(String text) {
         ToastUtils.ShowToast(App.getApp(),text);
+    }
+
+    @Override
+    public Context getContext() {
+        return App.getApp();
     }
 }
