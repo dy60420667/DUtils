@@ -14,7 +14,7 @@ import javax.xml.transform.Source;
 /**
  * 获得屏幕相关的辅助类
  */
-public class ScreenUtil {
+public class ScreenUtils {
 
     /**
      * 获取屏幕区域

@@ -14,8 +14,10 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.dy.baseutils.R;
 import com.dy.baseutils.utils.dialog.bean.BeanDialog;
 import com.dy.baseutils.utils.dialog.bean.BtnNums;
+import com.dy.baseutils.utils.listview.ListHeightUtils;
 
 /**
  * Created by dengyuan3 on 2017/9/22.

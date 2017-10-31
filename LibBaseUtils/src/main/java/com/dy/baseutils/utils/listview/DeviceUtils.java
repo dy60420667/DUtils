@@ -1,5 +1,6 @@
 package com.dy.baseutils.utils.listview;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.MemoryInfo;
@@ -35,24 +36,6 @@ import java.io.IOException;
  * 
  */
 public class DeviceUtils {
-
-	/**
-	 * 获取设备的宽高还有密度
-	 * 
-	 * @param context
-	 */
-	public static void getScreenInfo(Context context) {
-		DisplayMetrics dm = new DisplayMetrics();
-		((Activity) context).getWindowManager().getDefaultDisplay()
-				.getMetrics(dm);
-		DeviceUtils.screenDensity = dm.density;
-		DeviceUtils.screenHeight = dm.heightPixels;
-		DeviceUtils.screenWidth = dm.widthPixels;
-		Rect frame = new Rect();
-		((Activity) context).getWindow().getDecorView()
-				.getWindowVisibleDisplayFrame(frame);
-		DeviceUtils.statusBarHeight = frame.top;
-	}
 
 	/**
 	 * DIP转化为PX
@@ -105,6 +88,7 @@ public class DeviceUtils {
 	/**
 	 * 获取设备的序列号
 	 */
+	@SuppressLint("MissingPermission")
 	public static String getDeviceId(Context context) {
 		String DeviceID = "";
 		try{
@@ -168,7 +152,7 @@ public class DeviceUtils {
 		try {
 			WifiManager wifiMgr = (WifiManager) context
 					.getSystemService(Context.WIFI_SERVICE);
-			WifiInfo info = (null == wifiMgr ? null : wifiMgr
+			@SuppressLint("MissingPermission") WifiInfo info = (null == wifiMgr ? null : wifiMgr
 					.getConnectionInfo());
 			if (null != info) {
 				if (!TextUtils.isEmpty(info.getMacAddress()))
@@ -321,74 +305,6 @@ public class DeviceUtils {
 		long free = info.availMem / 1024 / 1024;
 
 		return free;
-	}
-
-	/**
-	 * get total memory of phone , in M
-	 * 
-	 * @param context
-	 * @return 手机总内存 2048M
-	 */
-	public static long getTotalMem(Context context) {
-		FileReader fr =null;
-		try {
-			  fr = new FileReader(FILE_MEMORY);
-			BufferedReader br = new BufferedReader(fr);
-			String text = br.readLine();
-			String[] array = text.split("\\s+");
-
-			return Long.valueOf(array[1]) / 1024;
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}finally {
-			if(fr!=null)
-			{
-				try {
-					fr.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		}
-
-		return -1;
-	}
-
-	/**
-	 * get the cpu info
-	 * 
-	 * @return 手机CPU型号 ARMv7 Processor
-	 */
-	public static String getCpuInfo() {
-		FileReader fr = null;
-		try {
-			 fr = new FileReader(FILE_CPU);
-			BufferedReader br = new BufferedReader(fr);
-			String text = br.readLine();
-			String[] array = text.split(":\\s+", 2);
-			for (int i = 0; i < array.length; i++) {
-			}
-			return array[1];
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}finally {
-			if(fr!=null)
-			{
-				try {
-					fr.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		}
-
-		return null;
 	}
 
 	/**
