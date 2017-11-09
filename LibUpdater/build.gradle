@@ -26,20 +26,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
 }
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'DUtils'
-    publishedGroupId = 'com.laomao'
-    libraryName = 'LibUpdater'
-    artifact = 'libUpdater'
-    libraryDescription = 'DUtils'
-    siteUrl = 'https://github.com/dy60420667/DUtils'
-    gitUrl = 'https://github.com/dy60420667/DUtils.git'
-    libraryVersion = '1.0'
-    developerId = 'laomao'
-    developerName = 'laomao'
-    developerEmail = '330715487@qq.com'
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
+apply from: './bintray.gradle'
