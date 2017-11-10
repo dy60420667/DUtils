@@ -9,8 +9,6 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 
-import dy.utils.libgaode.LBSSDK;
-import dy.utils.libgaode.utils.ILBSSDK;
 import dy.utils.libgaode.utils.ILBSSDKTlmp;
 import dy.utils.libgaode.utils.LbsInfo;
 
@@ -108,7 +106,7 @@ public class LBSClientGaode implements AMapLocationListener {
         if (times_num < ILBSSDKTlmp.getInstance().getTimes_fail_num()) {
             return;
         }
-//        RxBus.getDefault().post(LBSSDK.getInstance().getLbsInfo());
+//        RxBus.getDefault().post(LibGaode.getInstance().getLbsInfo());
         stopLBS();
     }
 

@@ -13,7 +13,7 @@ import com.dy.baseutils.utils.cache.CacheUtils;
 import com.dy.hbjg.R;
 import com.dy.hbjg.module.me.login.A_Login;
 
-import dy.utils.libphotopicker.LibPhotopickerSDK;
+import dy.utils.libphotopicker.LibPhotopicker;
 
 /**
  * Auth : dy
@@ -73,7 +73,7 @@ public class F_Me extends DYBaseFragment implements View.OnClickListener {
                 A_Login.gotoLogin(getActivity());
                 break;
             case R.id.layout_push:
-                LibPhotopickerSDK.goToPickerActivity(getActivity(),true,9,0);
+                LibPhotopicker.goToPickerActivity(getActivity(),true,9,0);
                 break;
         }
     }

@@ -1,8 +1,5 @@
 package dy.utils.libupdater.utils;
 
-import android.widget.Toast;
-
-import dy.utils.libupdater.UpdaterSDK;
 import dy.utils.libupdater.download.DownloadManager;
 
 /**

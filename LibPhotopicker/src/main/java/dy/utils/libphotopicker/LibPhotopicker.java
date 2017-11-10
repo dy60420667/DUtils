@@ -12,7 +12,7 @@ import dy.utils.libphotopicker.views.SelectModel;
  * Description:
  */
 
-public class LibPhotopickerSDK {
+public class LibPhotopicker {
 
     public static void goToPickerActivity(Activity context,boolean isShowCamera,int picNums,int result_code){
         PhotoPickerIntent intent = new PhotoPickerIntent(context);

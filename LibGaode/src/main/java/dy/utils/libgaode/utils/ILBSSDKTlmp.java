@@ -1,7 +1,5 @@
 package dy.utils.libgaode.utils;
 
-import dy.utils.libgaode.LBSSDK;
-
 /**
  * Auth : dy
  * Time : 2017/4/13 10:15

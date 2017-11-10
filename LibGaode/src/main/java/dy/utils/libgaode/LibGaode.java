@@ -14,7 +14,7 @@ import dy.utils.libgaode.utils.LbsInfo;
  * Description:
  */
 
-public class LBSSDK {
+public class LibGaode {
     /**
      * <!-- 设置key -->
      * <!--<meta-data-->

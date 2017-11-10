@@ -15,7 +15,7 @@ import dy.utils.libupdater.utils.VersionPreferences;
 /**
  * Created by dy on 2016/5/4.
  */
-public class UpdaterSDK {
+public class LibUpdater {
     public static void setiUpdaterSDK(IUpdaterSDK iUpdaterSDK) {
         IUploaderSDKTlmp.getInstance().setIUpdaterSDK(iUpdaterSDK);
     }
