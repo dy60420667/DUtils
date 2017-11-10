@@ -1,2 +1,3 @@
-# DYUtils
-rapid development framework for android
+LibUpdater
+
+compile 'com.laomao:LibUpdater:1.0'
