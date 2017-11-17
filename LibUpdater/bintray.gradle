@@ -3,19 +3,22 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 def siteUrl = 'https://github.com/dy60420667/Dutils'   // 项目的主页
 def gitUrl = 'https://github.com/dy60420667/Dutils.git'   // Git仓库的url
+def version_name = '1.2'
+def version_vcsTag = 'V 1.2'
+def version_group_name = "LibUpdater"
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 version = "1.2" //发布版本号
-group = "com.laomao" //最终引用形式，如compile 'com.leon.lfilepicker:1.0.0'，其中lfilepicker在后面配置
+group = "com.damao" //最终引用形式，如compile 'com.leon.lfilepicker:1.0.0'，其中lfilepicker在后面配置
 
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
     pkg {
         repo = 'DUtils'//自己创建的仓库名字
-        name = 'LibUpdater'//上传到JCenter的名字,最终引用的名字
+        name = version_group_name//上传到JCenter的名字,最终引用的名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ['MIT']//不能随便写，只能是仓库创建时选择的license type
@@ -23,10 +26,10 @@ bintray {
         publish = true // 是否是公开项目，公开别人可以引用
 
         version {
-            name = "1.2"
+            name = version_name
             desc = 'andorid updater'//描述，自己定义
             released  = new Date()
-            vcsTag = 'V1.2'
+            vcsTag = version_vcsTag
             attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
         }
     }
