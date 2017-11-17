@@ -3,10 +3,12 @@ package dy.utils.libupdater;
 import android.app.Activity;
 import android.text.TextUtils;
 
+import dy.utils.libupdater.bean.UpdateTypeEnum;
 import dy.utils.libupdater.bean.VersionBean;
 import dy.utils.libupdater.dialog.VersionDialog;
 import dy.utils.libupdater.download.DownloadManager;
 import dy.utils.libupdater.download.db.DownloadDBManager;
+import dy.utils.libupdater.notice.VersionNotice;
 import dy.utils.libupdater.utils.IUpdaterSDK;
 import dy.utils.libupdater.utils.IUploaderSDKTlmp;
 import dy.utils.libupdater.utils.VersionPreferences;
@@ -19,7 +21,6 @@ public class LibUpdater {
     public static void setiUpdaterSDK(IUpdaterSDK iUpdaterSDK) {
         IUploaderSDKTlmp.getInstance().setIUpdaterSDK(iUpdaterSDK);
     }
-
 
     /**
      * @param context
@@ -56,7 +57,12 @@ public class LibUpdater {
             return;
         }
 
-        VersionDialog.showAppVersionCheckDialog(context, bean);
+        if(bean.updateTypeEnum== UpdateTypeEnum.UPDATE_TYPE_DOWN_BACKGROUND&&!isUserClickCheckUpdater){
+//            VersionNotice.getInstance().setUpNotification(context,bean);
+            DownloadManager.getDownloadManager().startDownload(bean.url);
+        }else{
+            VersionDialog.showAppVersionCheckDialog(context, bean);
+        }
     }
 }
 

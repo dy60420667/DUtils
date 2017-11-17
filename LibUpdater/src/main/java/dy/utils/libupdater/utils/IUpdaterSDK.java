@@ -12,4 +12,6 @@ public interface IUpdaterSDK {
     void showToast(String text);
 
     void showToast(int resourceId);
+
+    void initConfig();
 }

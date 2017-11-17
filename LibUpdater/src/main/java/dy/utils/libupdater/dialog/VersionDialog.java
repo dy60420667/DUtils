@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import dy.utils.libupdater.R;
+import dy.utils.libupdater.bean.UpdateTypeEnum;
 import dy.utils.libupdater.bean.VersionBean;
 import dy.utils.libupdater.utils.IUploaderSDKTlmp;
 import dy.utils.libupdater.utils.VersionPreferences;
@@ -38,7 +39,7 @@ public class VersionDialog {
         }
         LayoutInflater inflater = LayoutInflater.from(context);
         View v;
-        if (item.isForce()) {
+        if (item.isForce()) {//强制升级
             v = inflater.inflate(R.layout.tool_dialog_msg_twobtn_force, null);// 得到加载view
         } else {
             v = inflater.inflate(R.layout.tool_dialog_msg_twobtn, null);// 得到加载view
