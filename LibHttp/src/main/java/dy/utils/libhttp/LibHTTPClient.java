@@ -37,7 +37,7 @@ public class LibHTTPClient {
         return instance;
     }
     private Retrofit retrofit;
-    private HTTP_API http_api;
+    private IHttpApi http_api;
 
 
     private LibHTTPClient(){
@@ -48,7 +48,7 @@ public class LibHTTPClient {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(LibHttpManager.getInstance().getBaseUrl())
                 .build();
-        http_api = retrofit.create(HTTP_API.class);
+        http_api = retrofit.create(IHttpApi.class);
     }
 
     //添加线程管理并订阅

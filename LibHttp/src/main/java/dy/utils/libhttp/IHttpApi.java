@@ -19,7 +19,7 @@ import rx.Observable;
  * Description:
  */
 
-public interface HTTP_API {
+public interface IHttpApi {
 
     /**
      * 获取最热电影
