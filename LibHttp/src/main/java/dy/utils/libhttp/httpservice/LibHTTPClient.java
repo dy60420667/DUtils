@@ -4,17 +4,17 @@ package dy.utils.libhttp.httpservice;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-import dy.utils.libhttp.httpservice.model.BaseResponse;
 import dy.utils.libhttp.httpservice.model.movie.list.Movie_item;
 import dy.utils.libhttp.httpservice.config.LibHttpManager;
+import dy.utils.libhttp.httpservice.subscriber.DObserver;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import rx.Observable;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Auth : dy
@@ -52,7 +52,7 @@ public class LibHTTPClient {
     }
 
     //添加线程管理并订阅
-    private void toSubscribe(Observable o, Subscriber s){
+    private void toSubscribe(Observable o, Observer s){
         o.subscribeOn(Schedulers.io())
                 .timeout(LibHttpManager.getInstance().getTIME_OUT_(), TimeUnit.SECONDS)
                 .unsubscribeOn(Schedulers.io())
@@ -61,7 +61,7 @@ public class LibHTTPClient {
     }
 
 
-    public void getMovieTops(Subscriber<BaseResponse<Movie_item>> subscriber, int start){
+    public void getMovieTops(DObserver<Movie_item> subscriber, int start){
         HashMap<String,String> map = new HashMap<>();
         map.put("count", LibHttpManager.getInstance().getPAGE_SIZE()+"");
         map.put("start",start+"");
@@ -69,15 +69,15 @@ public class LibHTTPClient {
         toSubscribe(observable,subscriber);
     }
 
-    public void getMovieInTheaters(Subscriber<BaseResponse<Movie_item>> subscriber, int start){
+    public void getMovieInTheaters(DObserver<Movie_item> observer, int start){
         HashMap<String,String> map = new HashMap<>();
         map.put("count", LibHttpManager.getInstance().getPAGE_SIZE()+"");
         map.put("start",start+"");
         Observable observable = http_api.getMovieInTheaters(map);
-        toSubscribe(observable,subscriber);
+        toSubscribe(observable,observer);
     }
 
-    public void searchMovie(Subscriber<BaseResponse<Movie_item>> subscriber, String tag, int start){
+    public void searchMovie(DObserver<Movie_item> subscriber, String tag, int start){
         HashMap<String,String> map = new HashMap<>();
         map.put("count", LibHttpManager.getInstance().getPAGE_SIZE()+"");
         map.put("start",start+"");

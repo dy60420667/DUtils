@@ -6,8 +6,7 @@ import com.dy.baseutils.module.base.view.IBaseListView;
 import dy.utils.libhttp.httpservice.LibHTTPClient;
 import dy.utils.libhttp.httpservice.model.BaseResponse;
 import dy.utils.libhttp.httpservice.model.movie.list.Movie_item;
-import dy.utils.libhttp.httpservice.subscriber.BaseSubscriber;
-import rx.Subscriber;
+import dy.utils.libhttp.httpservice.subscriber.DObserver;
 
 /**
  * Auth : dy
@@ -28,18 +27,31 @@ public class MovieInTheatersPresenter extends BasePresenter{
     }
 
     public void loadDate(int count) {
-        Subscriber subscriber = new BaseSubscriber<Movie_item>() {
-            @Override
+
+//        Subscriber subscriber = new DObserver<Movie_item>() {
+//            @Override
+//            public void onError(Throwable e) {
+//                super.onError(e);
+//                i_movieListView.showError("");
+////                i_movieListView.onError(e);
+//            }
+//
+//            @Override
+//            public void onNext(BaseResponse<Movie_item> model) {
+//                i_movieListView.setDate(model.subjects);
+////                i_movieListView.onNext(model);
+//            }
+//        };
+
+        DObserver<Movie_item> subscriber = new DObserver<Movie_item>(){
             public void onError(Throwable e) {
                 super.onError(e);
                 i_movieListView.showError("");
-//                i_movieListView.onError(e);
             }
 
             @Override
             public void onNext(BaseResponse<Movie_item> model) {
                 i_movieListView.setDate(model.subjects);
-//                i_movieListView.onNext(model);
             }
         };
         LibHTTPClient.getInstance().getMovieInTheaters(subscriber, count);

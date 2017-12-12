@@ -5,7 +5,7 @@ import com.dy.baseutils.module.base.view.IBaseListView;
 import dy.utils.libhttp.httpservice.LibHTTPClient;
 import dy.utils.libhttp.httpservice.model.BaseResponse;
 import dy.utils.libhttp.httpservice.model.movie.list.Movie_item;
-import dy.utils.libhttp.httpservice.subscriber.BaseSubscriber;
+import dy.utils.libhttp.httpservice.subscriber.DObserver;
 import rx.Subscriber;
 
 /**
@@ -22,7 +22,7 @@ public class SearchPresenter {
     }
 
     public void searchMovies(String world,int start) {
-        Subscriber subscriber = new BaseSubscriber<Movie_item>() {
+        DObserver subscriber = new DObserver<Movie_item>() {
             @Override
             public void onError(Throwable e) {
                 iBaseListView.showError("");

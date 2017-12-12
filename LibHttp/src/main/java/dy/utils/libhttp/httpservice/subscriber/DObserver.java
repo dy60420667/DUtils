@@ -10,6 +10,8 @@ import org.json.JSONException;
 import dy.utils.libhttp.httpservice.exception.ApiException;
 import dy.utils.libhttp.httpservice.exception.ResultException;
 import dy.utils.libhttp.httpservice.model.BaseResponse;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 import retrofit2.adapter.rxjava.HttpException;
 import rx.Subscriber;
 
@@ -20,14 +22,11 @@ import rx.Subscriber;
  * Description:
  */
 
-public class BaseSubscriber<T> extends Subscriber<BaseResponse<T>>{
+public class DObserver<T> implements Observer<BaseResponse<T>> {
     private String networkMsg = "网络错误";
     private String parseMsg = "解析错误";
     private String unknownMsg = "未知错误";
 
-    @Override
-    public void onCompleted() {
-    }
 
     @Override
     public void onError(Throwable e) {
@@ -36,6 +35,15 @@ public class BaseSubscriber<T> extends Subscriber<BaseResponse<T>>{
         }catch (Exception e1){
             e1.printStackTrace();
         }
+    }
+
+    @Override
+    public void onComplete() {
+
+    }
+
+    @Override
+    public void onSubscribe(Disposable d) {
     }
 
     @Override
