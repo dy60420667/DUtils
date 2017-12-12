@@ -6,7 +6,7 @@ import android.net.Uri;
 
 import java.io.File;
 
-import dy.utils.libhttp.config.LibHttpManager;
+import dy.utils.libhttp.httpservice.config.LibHttpManager;
 import dy.utils.libhttp.downloadservice.manager.DownloadManager;
 
 

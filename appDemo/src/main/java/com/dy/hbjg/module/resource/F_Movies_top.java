@@ -15,7 +15,7 @@ import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 
 import java.util.List;
 
-import dy.utils.libhttp.model.movie.MovieEntity;
+import dy.utils.libhttp.httpservice.model.movie.MovieEntity;
 
 
 /**

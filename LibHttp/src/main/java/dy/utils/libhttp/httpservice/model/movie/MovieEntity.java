@@ -1,4 +1,4 @@
-package dy.utils.libhttp.model.movie;
+package dy.utils.libhttp.httpservice.model.movie;
 
 import java.util.ArrayList;
 import java.util.List;

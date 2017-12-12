@@ -1,14 +1,10 @@
-package dy.utils.libhttp;
+package dy.utils.libhttp.httpservice;
 
 import java.util.HashMap;
 
-import dy.utils.libhttp.model.BaseResponse;
-import dy.utils.libhttp.model.movie.list.Movie_item;
-import retrofit2.http.FieldMap;
-import retrofit2.http.FormUrlEncoded;
+import dy.utils.libhttp.httpservice.model.BaseResponse;
+import dy.utils.libhttp.httpservice.model.movie.list.Movie_item;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 import rx.Observable;
 

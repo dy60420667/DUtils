@@ -12,7 +12,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import dy.utils.libhttp.R;
-import dy.utils.libhttp.config.LibHttpManager;
+import dy.utils.libhttp.httpservice.config.LibHttpManager;
 import dy.utils.libhttp.downloadservice.bean.DownloadBean;
 import dy.utils.libhttp.downloadservice.bean.DownloadStatus;
 import dy.utils.libhttp.downloadservice.db.DownloadDBManager;

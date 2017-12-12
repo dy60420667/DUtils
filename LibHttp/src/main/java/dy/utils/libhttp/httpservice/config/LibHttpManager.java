@@ -1,4 +1,4 @@
-package dy.utils.libhttp.config;
+package dy.utils.libhttp.httpservice.config;
 
 /**
  * Auth : dy

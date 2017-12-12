@@ -1,4 +1,4 @@
-package dy.utils.libhttp;
+package dy.utils.libhttp.rxbus;
 
 import rx.Observable;
 import rx.subjects.PublishSubject;

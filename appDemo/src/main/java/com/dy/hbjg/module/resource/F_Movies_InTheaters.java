@@ -10,13 +10,12 @@ import com.dy.baseutils.module.base.DYBaseListFragment;
 import com.dy.baseutils.module.newsshow.A_View_msg;
 import com.dy.baseutils.module.newsshow.bean.ViewMsg;
 import com.dy.hbjg.module.resource.presenter.MovieInTheatersPresenter;
-import com.dy.hbjg.module.resource.presenter.MovieTopsPresenter;
 import com.dy.hbjg.module.resource.view.ViewHolderItemNormal;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 
 import java.util.List;
 
-import dy.utils.libhttp.model.movie.MovieEntity;
+import dy.utils.libhttp.httpservice.model.movie.MovieEntity;
 
 
 /**

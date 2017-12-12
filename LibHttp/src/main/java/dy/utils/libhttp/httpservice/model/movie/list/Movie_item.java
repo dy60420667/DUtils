@@ -1,11 +1,10 @@
-package dy.utils.libhttp.model.movie.list;
+package dy.utils.libhttp.httpservice.model.movie.list;
 
 
 
 import java.util.ArrayList;
-import java.util.List;
 
-import dy.utils.libhttp.model.movie.MovieEntity;
+import dy.utils.libhttp.httpservice.model.movie.MovieEntity;
 
 /**
  * Auth : dy

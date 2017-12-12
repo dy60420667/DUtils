@@ -1,4 +1,4 @@
-package dy.utils.libhttp.exception;
+package dy.utils.libhttp.httpservice.exception;
 
 public class ResultException extends RuntimeException {
     private int errCode = 0;

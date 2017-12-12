@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.dy.baseutils.utils.dialog.ToastUtils;
 
-import dy.utils.libhttp.config.ILibHttp;
-import dy.utils.libhttp.config.LibHttpConfig;
+import dy.utils.libhttp.httpservice.config.ILibHttp;
+import dy.utils.libhttp.httpservice.config.LibHttpConfig;
 
 /**
  * Auth : dy

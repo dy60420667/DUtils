@@ -1,4 +1,4 @@
-package dy.utils.libhttp.exception;
+package dy.utils.libhttp.httpservice.exception;
 
 public class ApiException extends Exception {
     private final int code;

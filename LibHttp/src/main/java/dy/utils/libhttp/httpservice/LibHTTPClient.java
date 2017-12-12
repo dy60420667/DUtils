@@ -1,12 +1,12 @@
-package dy.utils.libhttp;
+package dy.utils.libhttp.httpservice;
 
 
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-import dy.utils.libhttp.model.BaseResponse;
-import dy.utils.libhttp.model.movie.list.Movie_item;
-import dy.utils.libhttp.config.LibHttpManager;
+import dy.utils.libhttp.httpservice.model.BaseResponse;
+import dy.utils.libhttp.httpservice.model.movie.list.Movie_item;
+import dy.utils.libhttp.httpservice.config.LibHttpManager;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;

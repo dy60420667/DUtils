@@ -5,7 +5,7 @@ import android.app.Application;
 import java.io.InputStream;
 import java.util.Properties;
 
-import dy.utils.libhttp.LibHttpSdk;
+import dy.utils.libhttp.httpservice.LibHttpSdk;
 
 
 /**

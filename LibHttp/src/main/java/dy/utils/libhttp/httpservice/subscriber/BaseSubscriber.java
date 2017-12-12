@@ -1,16 +1,15 @@
-package dy.utils.libhttp.subscriber;
+package dy.utils.libhttp.httpservice.subscriber;
 
 
 import android.net.ParseException;
-import android.widget.Toast;
 
 import com.google.gson.JsonParseException;
 
 import org.json.JSONException;
 
-import dy.utils.libhttp.exception.ApiException;
-import dy.utils.libhttp.exception.ResultException;
-import dy.utils.libhttp.model.BaseResponse;
+import dy.utils.libhttp.httpservice.exception.ApiException;
+import dy.utils.libhttp.httpservice.exception.ResultException;
+import dy.utils.libhttp.httpservice.model.BaseResponse;
 import retrofit2.adapter.rxjava.HttpException;
 import rx.Subscriber;
 

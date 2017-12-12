@@ -20,7 +20,7 @@ import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
-import dy.utils.libhttp.model.movie.MovieEntity;
+import dy.utils.libhttp.httpservice.model.movie.MovieEntity;
 import dy.view.tagflowlayout.view.FlowLayout;
 import dy.view.tagflowlayout.TagFlowLayout;
 import dy.view.tagflowlayout.TagFlowLayoutUtils;

@@ -2,10 +2,10 @@ package com.dy.hbjg.module.search.presenter;
 
 import com.dy.baseutils.module.base.view.IBaseListView;
 
-import dy.utils.libhttp.LibHTTPClient;
-import dy.utils.libhttp.model.BaseResponse;
-import dy.utils.libhttp.model.movie.list.Movie_item;
-import dy.utils.libhttp.subscriber.BaseSubscriber;
+import dy.utils.libhttp.httpservice.LibHTTPClient;
+import dy.utils.libhttp.httpservice.model.BaseResponse;
+import dy.utils.libhttp.httpservice.model.movie.list.Movie_item;
+import dy.utils.libhttp.httpservice.subscriber.BaseSubscriber;
 import rx.Subscriber;
 
 /**

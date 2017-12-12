@@ -9,7 +9,7 @@ import com.dy.baseutils.utils.log.LD;
 import com.dy.hbjg.R;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 
-import dy.utils.libhttp.model.movie.MovieEntity;
+import dy.utils.libhttp.httpservice.model.movie.MovieEntity;
 
 /**
  * Auth : dy

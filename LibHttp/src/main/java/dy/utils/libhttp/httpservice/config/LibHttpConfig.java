@@ -1,6 +1,4 @@
-package dy.utils.libhttp.config;
-
-import retrofit2.http.Part;
+package dy.utils.libhttp.httpservice.config;
 
 /**
  * Auth : dy

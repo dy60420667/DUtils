@@ -1,7 +1,7 @@
-package dy.utils.libhttp;
+package dy.utils.libhttp.httpservice;
 
-import dy.utils.libhttp.config.ILibHttp;
-import dy.utils.libhttp.config.LibHttpManager;
+import dy.utils.libhttp.httpservice.config.ILibHttp;
+import dy.utils.libhttp.httpservice.config.LibHttpManager;
 
 /**
  * Auth : dy
