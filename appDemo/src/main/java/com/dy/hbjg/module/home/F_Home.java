@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.dy.baseutils.Tools;
 import com.dy.baseutils.module.newsshow.A_View_msg;
+import com.dy.baseutils.utils.system.DevicesUtils;
 import com.dy.baseutils.view.viewpager.autoscroll.AutoScrollViewPager;
 import com.dy.hbjg.R;
 import java.util.ArrayList;
@@ -89,8 +89,8 @@ public class F_Home extends Fragment {
         tips = new ImageView[imgIdArray.length];
         for (int i = 0; i < tips.length; i++) {
             ImageView imageView = new ImageView(getContext());
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(Tools.dip2px(getActivity(), 8), Tools.dip2px(getActivity(), 8));
-            params.setMargins(Tools.dip2px(getActivity(), 5), Tools.dip2px(getActivity(), 11), Tools.dip2px(getActivity(), 5), Tools.dip2px(getActivity(), 11));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(DevicesUtils.dip2px(getActivity(), 8), DevicesUtils.dip2px(getActivity(), 8));
+            params.setMargins(DevicesUtils.dip2px(getActivity(), 5), DevicesUtils.dip2px(getActivity(), 11), DevicesUtils.dip2px(getActivity(), 5), DevicesUtils.dip2px(getActivity(), 11));
             imageView.setLayoutParams(params);
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             tips[i] = imageView;

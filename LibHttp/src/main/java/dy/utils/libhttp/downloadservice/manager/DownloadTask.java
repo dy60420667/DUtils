@@ -1,4 +1,4 @@
-package dy.utils.libhttp.downloadservice;
+package dy.utils.libhttp.downloadservice.manager;
 
 import android.text.TextUtils;
 
@@ -13,7 +13,6 @@ import dy.utils.libhttp.R;
 import dy.utils.libhttp.downloadservice.bean.DownloadBean;
 import dy.utils.libhttp.downloadservice.bean.DownloadStatus;
 import dy.utils.libhttp.downloadservice.db.DownloadDBManager;
-import dy.utils.libhttp.downloadservice.utils.DownloadUtils;
 
 
 public class DownloadTask implements Runnable {

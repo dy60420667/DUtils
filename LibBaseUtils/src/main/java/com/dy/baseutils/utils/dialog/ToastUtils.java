@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dy.baseutils.R;
-import com.dy.baseutils.Tools;
+import com.dy.baseutils.utils.system.DevicesUtils;
 
 /**
  * Auth : dy
@@ -42,7 +42,7 @@ public class ToastUtils {
         tv.setText(text);
         toast = new Toast(context);
         toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, Tools.dip2px(context, 120));
+        toast.setGravity(Gravity.CENTER, 0, DevicesUtils.dip2px(context, 120));
         toast.setView(view);
         toast.show();
 

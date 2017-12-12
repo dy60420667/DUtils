@@ -1,4 +1,4 @@
-package dy.utils.libhttp.downloadservice;
+package dy.utils.libhttp.downloadservice.manager;
 
 import android.content.Context;
 import android.os.Environment;

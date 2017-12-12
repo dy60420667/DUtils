@@ -1,40 +1,18 @@
-package com.dy.baseutils;
+package com.dy.baseutils.utils.system;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
-import android.util.DisplayMetrics;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import java.util.Timer;
-
 /**
- * Auth : dy
- * Time : 2017/1/22 13:28
- * Email: dymh21342@163.com
- * Description:
+ * Descripty:
+ * Auth:  dengyuan3
+ * Date: 2017/10/24.21:36
+ * Email: dengyuan3@jd.com
  */
-
-public class Tools {
-    public static int dip2px(Context context, float dpValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dpValue * scale + 0.5f);
-    }
-    public static int px2dip(Context context, float pxValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (pxValue / scale + 0.5f);
-    }
-
-    public static final int getScreenWidth(Context context) {
-        DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        return dm.widthPixels;
-    }
-
-    public static final int getScreenHeight(Context context) {
-        DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        return dm.heightPixels;
-    }
+public class SoftKeyInputUtils {
 
     /**
      * 显示软键盘
@@ -59,5 +37,4 @@ public class Tools {
         InputMethodManager mInputMethodManager = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         mInputMethodManager.hideSoftInputFromWindow(context.getCurrentFocus().getWindowToken(), 0);
     }
-
 }

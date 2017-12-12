@@ -3,7 +3,8 @@ package com.dy.baseutils.utils.image;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import com.dy.baseutils.Tools;
+
+import com.dy.baseutils.utils.system.ScreenUtils;
 
 /**
  * Auth : dy
@@ -21,8 +22,8 @@ public class ImageUtils {
      * @return
      */
     public static Bitmap decodeBitmapNoMax(String path, Context context) {
-        int w = Tools.getScreenWidth(context);
-        int h = Tools.getScreenHeight(context);
+        int w = ScreenUtils.getScreenWidth();
+        int h = ScreenUtils.getScreenHeight();
         BitmapFactory.Options op = new BitmapFactory.Options();
         // 值设为true,将不返回实际的bitmap不给其分配内存空间而里面只包括一些解码边界信息即图片大小信息
         op.inJustDecodeBounds = true;

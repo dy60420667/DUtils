@@ -14,9 +14,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dy.baseutils.Tools;
 import com.dy.baseutils.module.base.DYBaseActivity;
 import com.dy.baseutils.utils.dialog.ToastUtils;
+import com.dy.baseutils.utils.system.SoftKeyInputUtils;
 import com.dy.hbjg.R;
 import com.dy.hbjg.module.search.view.ISearchView;
 
@@ -85,13 +85,13 @@ public class A_search extends DYBaseActivity<F_search> implements View.OnClickLi
                     getFragment().searchPresenter.searchMovies(getWorld(),0);
                     getFragment().showList();
                     getFragment().showLoading();
-                    Tools.hideSoftKeyWorld(A_search.this);
+                    SoftKeyInputUtils.hideSoftKeyWorld(A_search.this);
                 }
                 return false;
             }
         });
 
-        Tools.showSoftKeyWorld(toolbar_et_search);
+        SoftKeyInputUtils.showSoftKeyWorld(toolbar_et_search);
     }
 
     @Override
@@ -119,7 +119,7 @@ public class A_search extends DYBaseActivity<F_search> implements View.OnClickLi
             case R.id.toolbar_img_delete:
                 toolbar_et_search.setText("");
                 iSearchView.showTagFlow();
-                Tools.showSoftKeyWorld(toolbar_et_search);
+                SoftKeyInputUtils.showSoftKeyWorld(toolbar_et_search);
                 break;
         }
     }
@@ -130,7 +130,7 @@ public class A_search extends DYBaseActivity<F_search> implements View.OnClickLi
 
     @Override
     protected void onPause() {
-        Tools.hideSoftKeyWorld(this);
+        SoftKeyInputUtils.hideSoftKeyWorld(this);
         super.onPause();
     }
 }
