@@ -1,13 +1,10 @@
 package com.dy.hbjg.module.loading;
 
 import android.content.Intent;
-import android.graphics.PathDashPathEffect;
 import android.os.Handler;
-import android.support.v4.content.ContextCompat;
-import android.view.View;
 
 import com.dy.baseutils.module.base.DYBaseFragment;
-import com.dy.hbjg.A_Home;
+import com.dy.hbjg.module.home.A_Home;
 import com.dy.hbjg.R;
 
 /**
@@ -35,8 +32,9 @@ public class F_Loading extends DYBaseFragment {
             public void run() {
                 Intent it = new Intent(getActivity(), A_Home.class);
                 startActivity(it);
+                getActivity().finish();
             }
-        },2);
+        },1000);
 
     }
 

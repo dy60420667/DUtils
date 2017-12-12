@@ -1,7 +1,7 @@
 package com.dy.hbjg.module.me.utils;
 
 import com.dy.baseutils.utils.shareparference.ToolShareParference;
-import com.dy.hbjg.App;
+import com.dy.hbjg.base.App;
 
 /**
  * Created by oosmart on 17/1/21.

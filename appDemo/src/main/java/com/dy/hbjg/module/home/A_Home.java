@@ -1,4 +1,4 @@
-package com.dy.hbjg;
+package com.dy.hbjg.module.home;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
