@@ -34,7 +34,7 @@ public class F_Loading extends DYBaseFragment {
                 startActivity(it);
                 getActivity().finish();
             }
-        },1000);
+        },10);
 
     }
 

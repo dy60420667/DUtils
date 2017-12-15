@@ -5,7 +5,7 @@ import android.util.DisplayMetrics;
 
 /**
  * Descripty:
- * Auth:  邓渊  dengyuan3@jd.com
+ * Auth:  邓渊
  * Date: 2017/12/11.21:15
  */
 

@@ -2,7 +2,7 @@ package dy.utils.libupdater.bean;
 
 /**
  * Descripty:升级的enum
- * Auth:  邓渊  dengyuan3@jd.com
+ * Auth:  邓渊
  * Date: 2017/11/17.13:33
  */
 public enum UpdateTypeEnum {

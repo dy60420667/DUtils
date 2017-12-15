@@ -1,6 +1,8 @@
 package dy.utils.libhttp.httpservice;
 
 
+import android.util.Log;
+
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +15,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -45,10 +47,12 @@ public class LibHTTPClient {
 //        httpClientBuilder.connectTimeout(HTTP_Config.TIME_OUT_CONNECT, TimeUnit.SECONDS);
         retrofit = new Retrofit.Builder().client(httpClientBuilder.build())
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(LibHttpManager.getInstance().getBaseUrl())
                 .build();
         http_api = retrofit.create(IHttpApi.class);
+        Log.i("xx","xx");
+
     }
 
     //添加线程管理并订阅

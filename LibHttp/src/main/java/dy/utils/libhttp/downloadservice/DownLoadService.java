@@ -6,7 +6,7 @@ import dy.utils.libhttp.downloadservice.utils.IDownloadListener;
 
 /**
  * Descripty:
- * Auth:  邓渊  dengyuan3@jd.com
+ * Auth:  邓渊
  * Date: 2017/12/11.21:08
  */
 

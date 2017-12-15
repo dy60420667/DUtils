@@ -12,8 +12,7 @@ import dy.utils.libhttp.httpservice.exception.ResultException;
 import dy.utils.libhttp.httpservice.model.BaseResponse;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import retrofit2.adapter.rxjava.HttpException;
-import rx.Subscriber;
+import retrofit2.HttpException;
 
 /**
  * Auth : dy
