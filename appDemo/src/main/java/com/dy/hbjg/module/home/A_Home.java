@@ -1,10 +1,10 @@
 package com.dy.hbjg.module.home;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,11 +12,10 @@ import android.widget.RadioGroup;
 
 import com.dy.baseutils.module.base.DYBaseActivity;
 import com.dy.hbjg.R;
-import com.dy.hbjg.module.home.F_Home;
 import com.dy.hbjg.module.me.F_Me;
 import com.dy.hbjg.module.resource.F_Movies;
-import com.dy.hbjg.module.resource.F_Movies_top;
 import com.dy.hbjg.module.search.A_search;
+
 
 public class A_Home extends DYBaseActivity implements View.OnClickListener{
 

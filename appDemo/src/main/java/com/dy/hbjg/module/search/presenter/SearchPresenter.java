@@ -6,7 +6,6 @@ import dy.utils.libhttp.httpservice.LibHTTPClient;
 import dy.utils.libhttp.httpservice.model.BaseResponse;
 import dy.utils.libhttp.httpservice.model.movie.list.Movie_item;
 import dy.utils.libhttp.httpservice.subscriber.DObserver;
-import rx.Subscriber;
 
 /**
  * Auth : dy
