@@ -1,5 +1,7 @@
 package dy.utils.libhttp.downloadservice;
 
+import android.text.TextUtils;
+
 import dy.utils.libhttp.downloadservice.manager.DownloadManager;
 import dy.utils.libhttp.downloadservice.manager.DownloadTask;
 import dy.utils.libhttp.downloadservice.utils.IDownloadListener;
@@ -12,11 +14,11 @@ import dy.utils.libhttp.downloadservice.utils.IDownloadListener;
 
 public class DownLoadService {
     //断点续传下载图片和文件
-    public static void downloadFile(IDownloadListener iDownloadListener){
-        if(iDownloadListener==null){
+    public static void downloadFile(String url,IDownloadListener iDownloadListener){
+        if(iDownloadListener==null|| TextUtils.isEmpty(url)){
             return;
         }
-        DownloadManager.getDownloadManager().startDownload(iDownloadListener.getDownLoadUrl());
+        DownloadManager.getDownloadManager().startDownload(url);
         DownloadManager.getDownloadManager().register(iDownloadListener);
     }
 

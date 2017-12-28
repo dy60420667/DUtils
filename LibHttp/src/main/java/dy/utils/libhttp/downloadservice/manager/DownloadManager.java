@@ -241,7 +241,7 @@ public class DownloadManager {
             public void run() {
                 for (int i = listObserver.size()-1; i >=0; i--) {
                     IDownloadListener downloadListener = listObserver.get(i);
-                    if (TextUtils.isEmpty(downloadListener.getDownLoadUrl()) || !downloadListener.getDownLoadUrl().equals(bean.downloadUrl)) {
+                    if(downloadListener==null){
                         return;
                     }
                     switch (bean.downladstatus) {
