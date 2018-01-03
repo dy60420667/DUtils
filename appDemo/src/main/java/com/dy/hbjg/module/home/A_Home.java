@@ -1,5 +1,7 @@
 package com.dy.hbjg.module.home;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,6 +20,11 @@ import com.dy.hbjg.module.search.A_search;
 
 
 public class A_Home extends DYBaseActivity implements View.OnClickListener{
+
+    public static void gotoActivity(Context mContext){
+        Intent it = new Intent(mContext, A_Home.class);
+        mContext.startActivity(it);
+    }
 
     private ViewPager viewPager;
 

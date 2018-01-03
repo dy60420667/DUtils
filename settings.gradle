@@ -1,1 +1,1 @@
-include ':LibBaseUtils', ':LibUpdater', ':LibGaode', ':TagFlowlayout', ':LibHttp', ':LibPhotopicker', ':appDemo'
+include ':LibBaseUtils', ':LibUpdater', ':LibGaode', ':TagFlowlayout', ':LibHttp', ':LibPhotopicker', ':appDemo', ':LibZXing'

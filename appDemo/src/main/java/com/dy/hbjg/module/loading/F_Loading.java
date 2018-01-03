@@ -6,6 +6,7 @@ import android.os.Handler;
 import com.dy.baseutils.module.base.DYBaseFragment;
 import com.dy.hbjg.module.home.A_Home;
 import com.dy.hbjg.R;
+import com.google.zxing.client.android.CaptureActivity;
 
 /**
  * Auth : dy
@@ -30,8 +31,8 @@ public class F_Loading extends DYBaseFragment {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent it = new Intent(getActivity(), A_Home.class);
-                startActivity(it);
+//               A_Home.gotoActivity(getActivity());
+                CaptureActivity.gotoActivity(getActivity());
                 getActivity().finish();
             }
         },10);

@@ -7,3 +7,5 @@
 /captures
 .externalNativeBuild
 *.apk
+src/main/java/com/dy/
+src/main/res/xml/
