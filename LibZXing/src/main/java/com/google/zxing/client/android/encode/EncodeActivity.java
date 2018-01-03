@@ -77,6 +77,113 @@ public final class EncodeActivity extends Activity {
     }
   }
 
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    MenuInflater menuInflater = getMenuInflater();
+    menuInflater.inflate(R.menu.encode, menu);
+    boolean useVcard = qrCodeEncoder != null && qrCodeEncoder.isUseVCard();
+    int encodeNameResource = useVcard ? R.string.menu_encode_mecard : R.string.menu_encode_vcard;
+    MenuItem encodeItem = menu.findItem(R.id.menu_encode);
+    encodeItem.setTitle(encodeNameResource);
+    Intent intent = getIntent();
+    if (intent != null) {
+      String type = intent.getStringExtra(Intents.Encode.TYPE);
+      encodeItem.setVisible(Contents.Type.CONTACT.equals(type));
+    }
+    return super.onCreateOptionsMenu(menu);
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    int i = item.getItemId();
+    if (i == R.id.menu_share) {
+      share();
+      return true;
+    } else if (i == R.id.menu_encode) {
+      Intent intent = getIntent();
+      if (intent == null) {
+        return false;
+      }
+      intent.putExtra(USE_VCARD_KEY, !qrCodeEncoder.isUseVCard());
+      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+      startActivity(intent);
+      finish();
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  private void share() {
+    QRCodeEncoder encoder = qrCodeEncoder;
+    if (encoder == null) { // Odd
+      Log.w(TAG, "No existing barcode to send?");
+      return;
+    }
+
+    String contents = encoder.getContents();
+    if (contents == null) {
+      Log.w(TAG, "No existing barcode to send?");
+      return;
+    }
+
+    Bitmap bitmap;
+    try {
+      bitmap = encoder.encodeAsBitmap();
+    } catch (WriterException we) {
+      Log.w(TAG, we);
+      return;
+    }
+    if (bitmap == null) {
+      return;
+    }
+
+    File bsRoot = new File(Environment.getExternalStorageDirectory(), "BarcodeScanner");
+    File barcodesRoot = new File(bsRoot, "Barcodes");
+    if (!barcodesRoot.exists() && !barcodesRoot.mkdirs()) {
+      Log.w(TAG, "Couldn't make dir " + barcodesRoot);
+      showErrorMessage(R.string.msg_unmount_usb);
+      return;
+    }
+    File barcodeFile = new File(barcodesRoot, makeBarcodeFileName(contents) + ".png");
+    if (!barcodeFile.delete()) {
+      Log.w(TAG, "Could not delete " + barcodeFile);
+      // continue anyway
+    }
+    FileOutputStream fos = null;
+    try {
+      fos = new FileOutputStream(barcodeFile);
+      bitmap.compress(Bitmap.CompressFormat.PNG, 0, fos);
+    } catch (FileNotFoundException fnfe) {
+      Log.w(TAG, "Couldn't access file " + barcodeFile + " due to " + fnfe);
+      showErrorMessage(R.string.msg_unmount_usb);
+      return;
+    } finally {
+      if (fos != null) {
+        try {
+          fos.close();
+        } catch (IOException ioe) {
+          // do nothing
+        }
+      }
+    }
+
+    Intent intent = new Intent(Intent.ACTION_SEND, Uri.parse("mailto:"));
+    intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name) + " - " + encoder.getTitle());
+    intent.putExtra(Intent.EXTRA_TEXT, contents);
+    intent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + barcodeFile.getAbsolutePath()));
+    intent.setType("image/png");
+    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+    startActivity(Intent.createChooser(intent, null));
+  }
+
+  private static CharSequence makeBarcodeFileName(CharSequence contents) {
+    String fileName = NOT_ALPHANUMERIC.matcher(contents).replaceAll("_");
+    if (fileName.length() > MAX_BARCODE_FILENAME_LENGTH) {
+      fileName = fileName.substring(0, MAX_BARCODE_FILENAME_LENGTH);
+    }
+    return fileName;
+  }
 
   @Override
   protected void onResume() {
