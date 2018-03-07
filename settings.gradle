@@ -1,1 +1,1 @@
-include ':LibBaseUtils', ':LibUpdater', ':LibGaode', ':LibHttp', ':appDemo'
+include ':LibBaseUtils', ':LibUpdater', ':LibGaode', ':LibHttp', ':app'
