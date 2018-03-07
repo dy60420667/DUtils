@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.dy.baseutils.R;
 import com.dy.baseutils.module.base.view.IBaseListView;
@@ -27,7 +28,7 @@ import java.util.List;
  * Description:
  */
 
-public abstract class DYBaseListFragment extends Fragment implements RecyclerArrayAdapter.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener, View.OnClickListener,IBaseListView {
+public abstract class DYBaseListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener,IBaseListView {
     public View rootView;
     public LayoutInflater inflater;
     private View view_error ,view_more,view_nomore;
@@ -54,8 +55,6 @@ public abstract class DYBaseListFragment extends Fragment implements RecyclerArr
         recyclerView.setLayoutManager(llm);
         adapter = new MyAdapter(this);
         recyclerView.setAdapter(adapter);
-
-        adapter.setOnItemClickListener(this);
 
         recyclerView.setRefreshingColor(R.color.colorPrimary);
         recyclerView.setRefreshingColorResources(R.color.colorPrimary);
@@ -93,6 +92,7 @@ public abstract class DYBaseListFragment extends Fragment implements RecyclerArr
     }
 
 
+
     public void initView(){
     }
 
@@ -102,6 +102,25 @@ public abstract class DYBaseListFragment extends Fragment implements RecyclerArr
 
     public  void setRefreshAble(boolean isRefresh) {
         recyclerView.getSwipeToRefresh().setEnabled(isRefresh);
+    }
+
+    public void setLoadMoreAble(boolean loadMoreAble) {
+        if(loadMoreAble){
+            return;
+        }
+        getAdapter().setNoMore(new View(getContext()));
+        recyclerView.setProgressView(new View(getContext()));
+        getAdapter().setMore(new View(getContext()), new RecyclerArrayAdapter.OnMoreListener() {
+            @Override
+            public void onMoreShow() {
+
+            }
+
+            @Override
+            public void onMoreClick() {
+
+            }
+        });
     }
 
     public int getViewType(int position) {
@@ -117,9 +136,6 @@ public abstract class DYBaseListFragment extends Fragment implements RecyclerArr
     }
 
     public abstract BaseViewHolder getViewHolder(ViewGroup parent, int viewType);
-
-    @Override
-    public abstract void onItemClick(int position);
 
 
     /**
@@ -176,7 +192,7 @@ public abstract class DYBaseListFragment extends Fragment implements RecyclerArr
             } else {
                 getRecyclerView().showRecycler();
             }
-            ToastUtils.ShowToast(getContext(), "获取数据失败");
+            ToastUtils.showToast(getContext(), "获取数据失败");
         } else {
             getRecyclerView().showError();
         }

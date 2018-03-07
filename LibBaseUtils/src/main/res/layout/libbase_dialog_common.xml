@@ -38,7 +38,7 @@
             android:background="@null"
             android:cacheColorHint="@android:color/transparent"
             android:clipToPadding="false"
-            android:divider="@color/line_color_dividing"
+            android:divider="@color/line_color"
             android:dividerHeight="1dp"
             android:fadingEdge="none"
             android:fastScrollEnabled="false"
@@ -83,7 +83,7 @@
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/line_color_dividing"/>
+            android:background="@color/line_color"/>
 
         <TextView
             android:id="@+id/tv_twobtn_right"

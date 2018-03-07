@@ -3,8 +3,12 @@ package com.dy.baseutils.utils.image;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.text.TextUtils;
 
 import com.dy.baseutils.utils.system.ScreenUtils;
+
+import java.io.File;
+import java.io.FileOutputStream;
 
 /**
  * Auth : dy
@@ -43,6 +47,26 @@ public class ImageUtils {
         op.inJustDecodeBounds = false;
         bmp = BitmapFactory.decodeFile(path, op);
         return bmp;
+    }
+
+    public static String saveBitmap(Bitmap mBitmap,String path,String fileName) throws Exception{
+        if(mBitmap==null||path==null){
+            return "";
+        }
+        File file = new File(path);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+
+        if(TextUtils.isEmpty(fileName)){
+            fileName = "LB"+System.currentTimeMillis()+".jpg";
+        }
+        File file1 = new File(file, fileName);
+        FileOutputStream out = new FileOutputStream(file1);
+        mBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+        out.flush();
+        out.close();
+        return file1.getAbsolutePath();
     }
 
 }

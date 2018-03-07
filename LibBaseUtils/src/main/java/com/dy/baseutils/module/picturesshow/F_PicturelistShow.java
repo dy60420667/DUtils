@@ -188,7 +188,6 @@ public class F_PicturelistShow extends DYBaseFragment {
                 final ImageView img = (ImageView) v.findViewById(R.id.imageView1);
                 Glide.with(getContext())
                         .load(url)
-                        .placeholder(R.drawable.iconfont_photo)
                         .into(img);
             }
 

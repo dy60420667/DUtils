@@ -5,6 +5,8 @@ import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.dy.baseutils.utils.system.DevicesUtils;
+
 /**
  * Created by xuchangqing on 2017/1/9.
  */
@@ -12,7 +14,7 @@ import android.widget.ListView;
 public class ListHeightUtils {
 
     public static  int setListViewHeightBasedOnChildren(Context context, ListView listView) {
-        int totalHeight = DeviceUtils.Dp2Px(context, 80);
+        int totalHeight = DevicesUtils.dp2px(context, 80);
         try {
             ListAdapter listAdapter = listView.getAdapter();
             if (listAdapter == null) {

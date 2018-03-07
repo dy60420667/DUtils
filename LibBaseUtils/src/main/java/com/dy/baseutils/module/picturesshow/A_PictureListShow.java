@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class A_PictureListShow extends DYBaseActivity {
     public static void gotoActivity(Activity context, ArrayList<String> list, int position){
         if(list==null||list.size()==0){
-            ToastUtils.ShowToast(context, R.string.resoure_null);
+            ToastUtils.showToast(context, R.string.resoure_null);
             return;
         }
         Intent it = new Intent(context,A_PictureListShow.class);

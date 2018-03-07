@@ -23,11 +23,11 @@ import com.dy.baseutils.utils.system.DevicesUtils;
 public class ToastUtils {
     private static Toast toast;
 
-    public static void ShowToast(final Context context, int resourceid){
-        ShowToast(context,context.getResources().getString(resourceid));
+    public static void showToast(final Context context, int resourceid){
+        showToast(context,context.getResources().getString(resourceid));
     }
 
-    public static void ShowToast(final Context context, final String text) {
+    public static void showToast(final Context context, final String text) {
         if (toast != null) {
             toast.cancel();
         }
@@ -42,7 +42,7 @@ public class ToastUtils {
         tv.setText(text);
         toast = new Toast(context);
         toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, DevicesUtils.dip2px(context, 120));
+        toast.setGravity(Gravity.CENTER, 0, DevicesUtils.dp2px(context, 120));
         toast.setView(view);
         toast.show();
 

@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    compileSdkVersion project.ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 25
+        minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION  as int
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION as int
         versionCode 1
         versionName "1.0"
     }
@@ -20,13 +20,21 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:support-v13:25.1.0'
 
-    compile 'com.android.support:recyclerview-v7:25.1.0'
-    compile 'com.jude:easyrecyclerview:4.4.2'
+    compile "com.android.support:support-v4:${ANDROID_SUPPORT_VERSION}"
+    compile "com.android.support:appcompat-v7:${ANDROID_SUPPORT_VERSION}"
+    compile "com.android.support:design:${ANDROID_SUPPORT_VERSION}"
+    compile "com.android.support:recyclerview-v7:${ANDROID_SUPPORT_VERSION}"
+    compile "com.android.support:support-annotations:${ANDROID_SUPPORT_VERSION}"
+    compile "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${GLIDE_VERSION}"
 
-    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile "com.jude:easyrecyclerview:${EASY_RECYCLEVIEW}"
+
+
+    compile 'com.zhy:base-rvadapter:3.0.3'
+
+
     /*缓存*/
-    compile('com.jakewharton:disklrucache:2.0.2')
+    compile "com.jakewharton:disklrucache:${DISK_LURCH_CACHE}"
 }

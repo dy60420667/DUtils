@@ -42,7 +42,6 @@ public class ViewHolderItemNormal extends BaseViewHolder<MovieEntity>{
         text_info.setText(data.getDescript());
         Glide.with(getContext())
                 .load(data.images.getUrl())
-                .placeholder(R.drawable.iconfont_photo)
                 .into(logo);
 
     }

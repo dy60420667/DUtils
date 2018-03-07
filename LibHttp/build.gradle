@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    compileSdkVersion project.ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 25
+        minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION  as int
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION as int
         versionCode 1
         versionName "1.0"
     }
@@ -27,5 +27,5 @@ dependencies {
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.1.7'
 
-    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile "com.squareup.okhttp3:okhttp:${OKHTTP}"
 }

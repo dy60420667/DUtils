@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    compileSdkVersion project.ANDROID_BUILD_SDK_VERSION as int
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+
     defaultConfig {
-        applicationId "com.dy.hbjg"
-        minSdkVersion 19
-        targetSdkVersion 25
+        applicationId project.ANDROID_APPLICATIONID
+        minSdkVersion project.ANDROID_BUILD_MIN_SDK_VERSION  as int
+        targetSdkVersion project.ANDROID_BUILD_TARGET_SDK_VERSION as int
         versionCode 4
         versionName "1.0.3"
 
@@ -22,16 +23,13 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:support-v13:25.1.0'
-
-    compile'com.android.support:recyclerview-v7:25.1.0'
-
+    compile "com.android.support:support-v4:${ANDROID_SUPPORT_VERSION}"
+    compile "com.android.support:appcompat-v7:${ANDROID_SUPPORT_VERSION}"
+    compile "com.android.support:recyclerview-v7:${ANDROID_SUPPORT_VERSION}"
+    compile "com.github.hymanme.tagflowlayout:tagflowlayout:${TAGFLOWLAYOUT}"
 
     //搜索热门标签
-    compile project(':TagFlowlayout')
     compile project(':LibBaseUtils')
     compile project(':LibHttp')
 
-    compile project(':LibPhotopicker')
 }

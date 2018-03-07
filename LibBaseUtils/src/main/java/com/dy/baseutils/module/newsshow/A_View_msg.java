@@ -32,7 +32,6 @@ public class A_View_msg extends DYBaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setEnableShowBack(true);
     }
 
     @Override

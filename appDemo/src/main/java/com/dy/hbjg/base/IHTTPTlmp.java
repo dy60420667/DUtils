@@ -31,7 +31,7 @@ public class IHTTPTlmp implements ILibHttp{
 
     @Override
     public void showToast(String text) {
-        ToastUtils.ShowToast(App.getApp(),text);
+        ToastUtils.showToast(App.getApp(),text);
     }
 
     @Override

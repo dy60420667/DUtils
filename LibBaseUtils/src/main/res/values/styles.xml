@@ -10,8 +10,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item><!--状态栏底色-->
         <item name="colorAccent">@color/colorAccent</item><!--各控制元件(如：check box、switch 或是 radoi) 被勾选 (checked) 或是选定 (selected) 的颜色。-->
         <item name="android:textColorPrimary">@android:color/white</item>
-        <item name="actionMenuTextColor">@android:color/white</item>
-        <item name="android:windowBackground">@color/activity_bg</item>
         <item name="android:screenOrientation">portrait</item>
     </style>
 
@@ -30,9 +28,9 @@
 
     <!-- 分割线 -->
     <style name="divider_line">
-        <item name="android:background">@color/line_color_dividing</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">1dip</item>
+        <item name="android:background">@color/line_color</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.8dp</item>
     </style>
 
 
@@ -45,6 +43,26 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:gravity">center</item>
         <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+
+    <declare-styleable name="CommonTitleBar">
+        <attr name="baseStyle">
+            <enum name="normal" value="0" />
+            <enum name="white" value="1" />
+        </attr>
+        <attr name="leftBtnIcon" format="reference" />
+        <attr name="leftBtnTxt" format="string|reference" />
+        <attr name="titleTxt" format="string|reference" />
+        <attr name="rightBtnTxt" format="string|reference" />
+        <attr name="rightBtnIcon" format="reference" />
+    </declare-styleable>
+
+    <style name="text_normal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_normal</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 

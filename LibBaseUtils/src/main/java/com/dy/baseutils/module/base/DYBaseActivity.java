@@ -1,21 +1,15 @@
 package com.dy.baseutils.module.base;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.dy.baseutils.R;
-
-import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
+import com.dy.baseutils.module.common.CommonTitleBar;
+import com.dy.baseutils.utils.log.LD;
 
 /**
  * Auth : dy
@@ -23,54 +17,60 @@ import java.io.FileInputStream;
  * Email: dymh21342@163.com
  * Description:
  */
+public abstract class DYBaseActivity<T extends Fragment> extends AppCompatActivity {
 
-public abstract class DYBaseActivity<T extends Fragment> extends AppCompatActivity implements Toolbar.OnMenuItemClickListener {
+    protected CommonTitleBar titleBar;
 
-
-    private Toolbar toolbar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i("xx","onCreate"+getClass().getName());
+        LD.i("xx", "onCreate" + getClass().getName());
         setContentView(getContentLayoutId());
         changeFragment();
-        initToolbar();
-    }
-    public Toolbar getToolbar(){
-        return toolbar;
-    }
-
-    private void initToolbar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        if(toolbar==null){
-            return;
-        }
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        setSupportActionBar(toolbar);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
-        toolbar.setOnMenuItemClickListener(this);
-    }
-
-    public void setEnableShowBack(boolean isEnable){
-        if(getSupportActionBar()==null){
-            return;
-        }
-        getSupportActionBar().setDisplayHomeAsUpEnabled(isEnable);
+        initView();
     }
 
     @Override
     protected void onDestroy() {
+        LD.i("xx", "onDestroy" + getClass().getName());
         super.onDestroy();
-        Log.i("xx","onDestroy"+getClass().getName());
     }
+
+    public void initView(){
+    }
+
+    public void setEnableTitlebar(boolean isEnable){
+        if(titleBar!=null&&!isEnable){
+            titleBar.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    public void setTitle(CharSequence title) {
+        titleBar.setTitleTxt(title.toString());
+    }
+
+    public void setEnableBack(boolean isEnable){
+        if(titleBar!=null&&!isEnable){
+            titleBar.hideLeftBtn();
+        }
+    }
+
+
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+
+        titleBar = (CommonTitleBar) findViewById(R.id.layout_titlebar);
+        if (titleBar != null)
+            titleBar.setLeftBtnOnclickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+    }
+
 
     public int getContentLayoutId() {
         return R.layout.dy_base_activity;
@@ -79,9 +79,10 @@ public abstract class DYBaseActivity<T extends Fragment> extends AppCompatActivi
 
     private T fragment;
 
-    public T getFragment(){
+    public T getFragment() {
         return fragment;
     }
+
     public void changeFragment() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         fragment = initFragment();
@@ -90,9 +91,4 @@ public abstract class DYBaseActivity<T extends Fragment> extends AppCompatActivi
     }
 
     public abstract T initFragment();
-
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        return false;
-    }
 }

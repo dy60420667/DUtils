@@ -75,7 +75,7 @@ public class DialogUtils {
 			public void onClick(View arg0) {
 				String newMsg = et.getText().toString();
 				if (TextUtils.isEmpty(newMsg)) {
-					ToastUtils.ShowToast(context, errorMsg);
+					ToastUtils.showToast(context, errorMsg);
 				} else {
 					dialogCreate.dismiss();
 					arg0.setTag(newMsg);

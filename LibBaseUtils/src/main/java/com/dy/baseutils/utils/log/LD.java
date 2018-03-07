@@ -7,6 +7,7 @@ public class LD {
 		i("xx",msg);
 	}
 	public static void i(String tag, String msg){
+		msg = "ld"+msg;
 		try {
 			if (msg.length() <= 3000) {
  				Log.i(tag, msg);
@@ -27,6 +28,7 @@ public class LD {
 		e("xx",msg);
 	}
 	public static void e(String tag, String msg){
+		msg = "ld"+msg;
 		try {
 			if (msg.length() <= 3000) {
  				Log.e(tag, msg);
@@ -46,6 +48,7 @@ public class LD {
 		d("xx",msg);
 	}
 	public static void d(String tag, String msg){
+		msg = "ld"+msg;
 		try {
 			if (msg.length() <= 3000) {
  				Log.d(tag, msg);

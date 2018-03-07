@@ -10,6 +10,8 @@
         <activity android:name=".module.picturesshow.A_PictureListShow"   />
         <activity android:name="com.dy.baseutils.view.webactivity.A_WebView"  />
         <activity android:name=".module.newsshow.A_View_msg" />
+
+        <activity android:name=".module.edittext.EditTextActivity"/>
     </application>
 
     <meta-data

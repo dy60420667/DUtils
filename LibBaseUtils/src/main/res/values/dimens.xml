@@ -2,6 +2,5 @@
 <resources>
 
     <!--AutoScrollViewPager-->
-    <dimen name="scroll_item_height">30dp</dimen>
-    <dimen name="auto_scrollview_dot_height">8dp</dimen>
+    <dimen name="libbase_titlebar_height">45dp</dimen>
 </resources>

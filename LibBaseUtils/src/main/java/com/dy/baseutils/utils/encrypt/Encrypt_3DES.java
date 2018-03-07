@@ -80,7 +80,7 @@ public class Encrypt_3DES {
             e1.printStackTrace();
         } catch (javax.crypto.NoSuchPaddingException e2) {
             e2.printStackTrace();
-        } catch (java.lang.Exception e3) {
+        } catch (Exception e3) {
             e3.printStackTrace();
         }
 
@@ -104,7 +104,7 @@ public class Encrypt_3DES {
             e1.printStackTrace();
         } catch (javax.crypto.NoSuchPaddingException e2) {
             e2.printStackTrace();
-        } catch (java.lang.Exception e3) {
+        } catch (Exception e3) {
             e3.printStackTrace();
         }
         return null;
@@ -125,7 +125,7 @@ public class Encrypt_3DES {
         String hs = "";
         String stmp = "";
         for (int n = 0; n < b.length; n++) {
-            stmp = (java.lang.Integer.toHexString(b[n] & 0XFF));
+            stmp = (Integer.toHexString(b[n] & 0XFF));
             if (stmp.length() == 1)
                 hs = hs + "0" + stmp;
             else

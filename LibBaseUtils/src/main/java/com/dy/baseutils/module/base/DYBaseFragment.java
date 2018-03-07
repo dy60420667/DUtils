@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dy.baseutils.R;
+import com.dy.baseutils.viewinject.ViewUtils;
 
 /**
  * Auth : dy
@@ -34,4 +35,5 @@ public abstract class DYBaseFragment extends Fragment {
     public int getFragmentLayout() {
         return R.layout.dy_base_fragment;
     }
+
 }

@@ -1,5 +1,6 @@
 package com.dy.baseutils.view;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ImageView;
@@ -7,6 +8,7 @@ import android.widget.ImageView;
 import com.dy.baseutils.R;
 
 
+@SuppressLint("AppCompatCustomView")
 public class EyeImageView extends ImageView {
 	private int type = 0;//0表示未选择，1表示选择
 	

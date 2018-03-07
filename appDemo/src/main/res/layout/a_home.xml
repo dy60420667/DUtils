@@ -4,15 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_height="?attr/actionBarSize"
+    <com.dy.baseutils.module.common.CommonTitleBar
+        android:id="@+id/layout_titlebar"
         android:layout_width="match_parent"
-        android:background="?attr/colorPrimary">
-    </android.support.v7.widget.Toolbar>
-
-
-
+        android:layout_height="wrap_content" />
     <RadioGroup
         android:id="@+id/rg_tab"
         android:layout_width="fill_parent"
@@ -70,7 +65,6 @@
 
     </RadioGroup>
 
-
     <View
         android:id="@+id/line"
         android:layout_width="match_parent"
@@ -85,9 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/line"
-        android:layout_below="@+id/toolbar"/>
-
-
+        android:layout_below="@+id/layout_titlebar"/>
 
 
 </RelativeLayout>

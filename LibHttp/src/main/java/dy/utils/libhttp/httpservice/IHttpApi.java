@@ -23,7 +23,7 @@ public interface IHttpApi {
      * @return
      */
     @GET("movie/top250")
-    Observable<BaseResponse<Movie_item>> getMovieTop(@QueryMap HashMap<String,String> map);
+    Observable<BaseResponse<Movie_item>> getMovieTop(@QueryMap HashMap<String, String> map);
 
 
     /**
@@ -32,7 +32,7 @@ public interface IHttpApi {
      * @return
      */
     @GET("movie/in_theaters")
-    Observable<BaseResponse<Movie_item>> getMovieInTheaters(@QueryMap HashMap<String,String> map);
+    Observable<BaseResponse<Movie_item>> getMovieInTheaters(@QueryMap HashMap<String, String> map);
 
 
     /**
@@ -41,6 +41,6 @@ public interface IHttpApi {
      * @return
      */
     @GET("movie/search")
-    Observable<BaseResponse<Movie_item>> getMovieSearch(@QueryMap HashMap<String,String> map);
+    Observable<BaseResponse<Movie_item>> getMovieSearch(@QueryMap HashMap<String, String> map);
 
 }
